@@ -1,0 +1,12 @@
+.product {
+      padding: 12px;
+
+      background: rgb(255, 255, 255);
+
+      text-align: center;
+}
+
+.product__img {
+      height: 150px;
+      object-fit: cover;
+}
