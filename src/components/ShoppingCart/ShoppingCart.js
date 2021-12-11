@@ -10,18 +10,23 @@ export const ShoppingCart = () => {
       const { cart, deleteItem } = useContext(CartContext)
 
       return (
-            <div className="shopping-cart">
+            <>
                   <h2>Shopping Cart</h2>
 
-                  {
-                        cart.map(item => (
-                              <ShoppingCartItem
-                                    key={item._id}
-                                    id={item._id}
-                                    name={item.name}
-                              />
-                        ))
-                  }
-            </div>
+                  <div className="shopping-cart-list">
+                        {
+                              cart.map(item => (
+                                    <ShoppingCartItem
+                                          key={item._id}
+                                          id={item._id}
+                                          imageURL={item.imageURL}
+                                          description={item.description}
+                                          name={item.name}
+                                          price={item.price}
+                                    />
+                              ))
+                        }
+                  </div>
+            </>
       )
 }

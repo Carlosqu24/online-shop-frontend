@@ -1,0 +1,14 @@
+.cart-item {
+      height: 360px;
+      /* min-width: 250px;  */
+      /* margin: auto; */
+}
+
+.cart-item__img {
+      width: 200px; 
+      width: 100%; 
+      height: 100%;
+      margin: auto;
+
+      object-fit: contain;
+}

@@ -28,7 +28,7 @@ export const ProductList = () => {
                               products.map(item => (
                                     <Product 
                                           key={item._id}
-                                          item={item._id}
+                                          id={item._id}
                                           name={item.name}
                                           description={item.description}
                                           imageURL={item.imageURL}

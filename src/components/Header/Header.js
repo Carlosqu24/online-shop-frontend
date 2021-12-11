@@ -10,8 +10,6 @@ export const Header = () => {
 
       const { cart } = useContext(CartContext);
 
-      console.log(cart.length)
-
       return (
             <header className="header">
                   <h2>Online Shop</h2>

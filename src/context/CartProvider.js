@@ -4,10 +4,7 @@ export const CartContext = createContext();
 
 export const CartProvider = (props) => {
       const [products, setProducts] = useState([])
-      const [cart, setCart] = useState([{
-            id: 1,
-            name: "PC"
-      }]);
+      const [cart, setCart] = useState([]);
 
       useEffect(() => {
             const getProducts = async () => {
@@ -21,16 +18,13 @@ export const CartProvider = (props) => {
       }, []);
 
       const addItem = id => {
-            const data = products.filter(element => element._id == id);
-
-            console.log(data)
+            const data = products.filter(element => element._id === id);
 
             setCart([...cart, ...data]);
       };
 
       const deleteItem = id => {
-            const newData = cart.filter(item => item.id !== id);
-            console.log(newData)
+            const newData = cart.filter(item => item._id != id);
 
             setCart(newData);
       };
