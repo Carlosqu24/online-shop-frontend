@@ -1,0 +1,9 @@
+/* .carousel {
+      height: 100px;
+} */
+
+.carousel__img {
+      height: 500px;
+
+      object-fit: contain;
+}
