@@ -20,7 +20,10 @@ export const CartProvider = (props) => {
       const addItem = id => {
             const data = products.filter(element => element._id === id);
 
-            setCart([...cart, ...data]);
+            const item = data[0];
+            item.quantity = 1;
+
+            setCart([...cart, item]);
       };
 
       const deleteItem = id => {

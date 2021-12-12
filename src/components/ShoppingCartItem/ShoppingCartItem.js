@@ -7,7 +7,7 @@ import './ShoppingCartItem.css'
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 
-export const ShoppingCartItem = ({ id, name, description, imageURL, price }) => {
+export const ShoppingCartItem = ({ id, name, description, imageURL, price, quantity }) => {
 
       const { cart, deleteItem } = useContext(CartContext)
 
@@ -19,6 +19,9 @@ export const ShoppingCartItem = ({ id, name, description, imageURL, price }) => 
                               <Card.Title>{name}</Card.Title>
                               <Card.Text>
                                     {description}
+                              </Card.Text>
+                              <Card.Text>
+                                    {quantity}
                               </Card.Text>
                               <Button
                                     variant="danger"

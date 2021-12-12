@@ -23,6 +23,7 @@ export const ShoppingCart = () => {
                                           description={item.description}
                                           name={item.name}
                                           price={item.price}
+                                          quantity={item.quantity}
                                     />
                               ))
                         }

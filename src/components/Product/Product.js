@@ -21,6 +21,9 @@ export const Product = ({ id, name, category, description, imageURL, price }) =>
                         <Card.Text>
                               {description}
                         </Card.Text>
+                        <Card.Text>
+                              ${price}
+                        </Card.Text>
                         <Button 
                               variant="dark"
                               onClick={() => addItem(id)}
