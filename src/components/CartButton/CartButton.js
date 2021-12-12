@@ -1,20 +1,33 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 
+// CONTEXT
 import { CartContext } from '../../context/CartProvider'
 
+// COMPONENTS
 import { CartOffCanva } from '../CartOffCanva/CartOffCanva'
 
+import { Button } from 'react-bootstrap'
+
 export const CartButton = () => {
+      const [show, setShow] = useState(false)
+
+      const handleShow = () => setShow(true);
+      const handleClose = () => setShow(false);
+
       const { cart } = useContext(CartContext)
+
 
       return (
             <>
-                  <button className="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <box-icon name='cart'></box-icon>
-                        {cart.length}
-                  </button>
+                  <Button variant="light" onClick={handleShow}>
+                        Cart
+                        { cart.length }
+                  </Button>
 
-                  <CartOffCanva />
+                  <CartOffCanva 
+                        show={show}
+                        handleClose={handleClose}
+                  />
             </>
       )
 }

@@ -10,15 +10,15 @@ export const Carousel = ({ images }) => {
                   <CarouselComponent interval={1000}>
                         {
                               images.map(({ description, name, url }) => (
-                                    <CarouselComponent.Item>
+                                    <CarouselComponent.Item className="bg-dark">
                                           <img
                                                 className="carousel__img"
                                                 src={url}
                                                 alt={name}
                                           />
-                                          <CarouselComponent.Caption>
-                                                <h3>{name}</h3>
-                                                <p>{description}</p>
+                                          <CarouselComponent.Caption >
+                                                <h3 className="text-white">{name}</h3>
+                                                <p className="text-white">{description}</p>
                                           </CarouselComponent.Caption>
                                     </CarouselComponent.Item>
                               ))

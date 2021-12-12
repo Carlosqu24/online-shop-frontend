@@ -22,7 +22,7 @@ export const HomePage = () => {
             },
             {
                   id: new Date().getTime(),
-                  url: "https://www.wipoid.com/76961-thickbox_default/msi-meg-z590-ace-wifi.jpg",
+                  url: "https://asset.msi.com/resize/image/global/product/product_8_20190903141205_5d6e0435a91d8.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
                   name: "Third image",
                   description: "Third description"
             }

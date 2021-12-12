@@ -2,7 +2,10 @@ import React, { useContext } from 'react'
 
 import { CartContext } from '../../context/CartProvider'
 
-import './CartSummary.css'
+import './CartSummary.css';
+
+import { Card } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export const CartSummary = () => {
 
@@ -13,17 +16,20 @@ export const CartSummary = () => {
 
             return itemPrices.reduce((prev, current) => prev + current, 0)
       };
-
-      calculateTotalPrice()
+      
 
       return (
-            <div className="card">
-                  <h5 className="card-header">Cart Summary</h5>
-                  <div className="card-body">
-                        <p className="card-text">Total items: {cart.length}</p>
-                        <p className="card-text">Total price: ${calculateTotalPrice()}</p>
-                        <button className="btn btn-primary">Checkout</button>
-                  </div>
-            </div>
+            <Card>
+                  <Card.Header>Cart Summary</Card.Header>
+                  <Card.Body>
+                        <Card.Title>
+                              Total items: { cart.length }
+                        </Card.Title>
+                        <Card.Text>
+                              Total price: ${ calculateTotalPrice() }
+                        </Card.Text>
+                        <Button variant="primary">Checkout</Button>
+                  </Card.Body>
+            </Card>
       )
 }
