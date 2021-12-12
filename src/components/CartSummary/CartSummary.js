@@ -17,7 +17,7 @@ export const CartSummary = () => {
       calculateTotalPrice()
 
       return (
-            <div className="card w-50">
+            <div className="card">
                   <h5 className="card-header">Cart Summary</h5>
                   <div className="card-body">
                         <p className="card-text">Total items: {cart.length}</p>

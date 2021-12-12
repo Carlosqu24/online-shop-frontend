@@ -5,6 +5,7 @@ import { CartContext } from "../../context/CartProvider"
 import { Link } from 'react-router-dom'
 
 import './Header.css'
+import { CartButton } from '../CartButton/CartButton'
 
 export const Header = () => {
 
@@ -21,10 +22,12 @@ export const Header = () => {
                         </li>
                   </ul>
 
-                  <Link to="/cart" className="header__cart btn">
+                  {/* <Link to="/cart" className="header__cart btn">
                         <box-icon name="cart"></box-icon>
                         <span>{cart.length}</span>
-                  </Link>
+                  </Link> */}
+
+                  <CartButton />
             </header>
       )
 }

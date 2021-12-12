@@ -9,7 +9,7 @@ export const Product = ({ id, name, category, description, imageURL, price }) =>
 
       return (
             <div className="card">
-                  <img src={imageURL} className="card-img-top" alt={name} />   
+                  <img src={imageURL} className="card-img-top product__img" alt={name} />   
                         <div className="card-body">
                               <h5 className="card-title">{name}</h5>
                               <p className="card-text">{description}</p>
