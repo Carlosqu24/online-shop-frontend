@@ -7,13 +7,18 @@ export const ProductsCategories = () => {
       const productsCategories = [
             {
                   id: 1,
-                  url: "https://images.pexels.com/photos/4581902/pexels-photo-4581902.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            }, {
+                  url: "https://www.kantoaudio.com/wp-content/uploads/yu2mb_main.png",
+                  name: "Graphics"
+            }, 
+            {
                   id: 2,
-                  url: "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            }, {
+                  url: "https://img.fcbayern.com/image/upload/q_auto,f_auto/w_800,h_1067,c_pad/eCommerce/produkte/25001/pc-gaming-maus.png",
+                  name: "Mouse"
+            }, 
+            {
                   id: 3,
-                  url: "https://images.pexels.com/photos/1714202/pexels-photo-1714202.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  url: "https://static.acer.com/up/Resource/Acer/Monitors/K3/Photogallery/20200710/Acer_Monitor_K243Y_K273_gallery_01.png",
+                  name: "Monitor"
             }
       ]
 
@@ -24,9 +29,11 @@ export const ProductsCategories = () => {
                               <div className="products-category">
                                     <img 
                                           src={item.url} 
-                                          alt="" 
-                                          className="products-category__img"
+                                          alt={item.name}
+                                          className="products-category__img" 
                                     />
+                                    <h2 className="products-category__name">{item.name}</h2>
+                                    <button className="btn btn-light">Discover</button>
                               </div>
                         ))
                   }
