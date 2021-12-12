@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // COMPONENTS
 import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 
 // PAGES
 import { HomePage } from './pages/HomePage';
@@ -27,6 +28,7 @@ function App() {
             </Routes>
           </div>
         </BrowserRouter>
+        <Footer />
       </div>
     </CartProvider>
   );

@@ -10,3 +10,8 @@
       height: 200px;
       object-fit: contain;
 }
+
+.product__price {
+      font-size: 20px;
+      font-weight: bold;
+}

@@ -20,7 +20,7 @@ export const CartButton = () => {
       return (
             <>
                   <Button variant="light" onClick={handleShow}>
-                        Cart
+                        <box-icon name='cart'></box-icon>
                         { cart.length }
                   </Button>
 

@@ -21,13 +21,15 @@ export const Product = ({ id, name, category, description, imageURL, price }) =>
                         <Card.Text>
                               {description}
                         </Card.Text>
-                        <Card.Text>
-                              ${price}
-                        </Card.Text>
-                        <Button 
-                              variant="dark"
-                              onClick={() => addItem(id)}
-                        >Add to cart</Button>
+                        <div className="d-flex justify-content-between">
+                              <Card.Text className="product__price">
+                                    ${price}
+                              </Card.Text>
+                              <Button 
+                                    variant="dark"
+                                    onClick={() => addItem(id)}
+                              >Add to cart</Button>
+                        </div>
                   </Card.Body>
             </Card>
       )
