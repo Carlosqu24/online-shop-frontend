@@ -10,14 +10,7 @@ import { PayPalCheckoutButton } from '../PayPalCheckoutButton/PayPalCheckoutButt
 
 export const CartSummary = () => {
 
-      const { cart } = useContext(CartContext)
-
-      const calculateTotalPrice = () => {
-            const itemPrices = cart.map(item => item.price)
-
-            return itemPrices.reduce((prev, current) => prev + current, 0)
-      };
-      
+      const { cart, getTotalAmount } = useContext(CartContext)      
 
       return (
             <Card>
@@ -27,7 +20,7 @@ export const CartSummary = () => {
                               Total items: { cart.length }
                         </Card.Title>
                         <Card.Text>
-                              Total price: ${ calculateTotalPrice() }
+                              Total price: ${ getTotalAmount() }
                         </Card.Text>
                         
                         <PayPalCheckoutButton />

@@ -32,10 +32,17 @@ export const CartProvider = (props) => {
             setCart(newData);
       };
 
+      const getTotalAmount = () => {
+            const itemPrices = cart.map(item => item.price)
+
+            return itemPrices.reduce((prev, current) => prev + current, 0)
+      }
+
       const value = {
             cart,
             addItem,
-            deleteItem
+            deleteItem,
+            getTotalAmount
       };
 
       return (
