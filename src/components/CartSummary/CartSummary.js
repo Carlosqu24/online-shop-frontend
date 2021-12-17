@@ -6,6 +6,7 @@ import './CartSummary.css';
 
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { PayPalCheckoutButton } from '../PayPalCheckoutButton/PayPalCheckoutButton';
 
 export const CartSummary = () => {
 
@@ -28,7 +29,8 @@ export const CartSummary = () => {
                         <Card.Text>
                               Total price: ${ calculateTotalPrice() }
                         </Card.Text>
-                        <Button variant="primary">Checkout</Button>
+                        
+                        <PayPalCheckoutButton />
                   </Card.Body>
             </Card>
       )

@@ -20,10 +20,8 @@ export const ProductList = () => {
       }, []);
 
       return (
-            <>
-                  <h2>Products List</h2>
-                  
-                  <div className="products-list">
+            <>    
+                  <div className="products-list my-4">
                         {
                               products.map(item => (
                                     <Product 
