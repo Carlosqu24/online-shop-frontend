@@ -12,6 +12,7 @@ export const PayPalCheckoutButton = () => {
                               <PayPal />
                         ) : (
                               <button
+                                    className="btn btn-primary"
                                     onClick={() => setCheckout(true)}
                               >
                                     Checkout

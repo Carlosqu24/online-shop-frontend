@@ -16,20 +16,22 @@ export const ShoppingCartItem = ({ id, name, description, imageURL, price, quant
                   <Card>
                         <Card.Img variant="top" className="cart-item__img" src={imageURL} />
                         <Card.Body>
-                              <Card.Title>{name}</Card.Title>
-                              <Card.Text>
+                              <Card.Title className="mb-3">{name}</Card.Title>
+                              <Card.Text className="mb-3">
                                     {description}
                               </Card.Text>
-                              <Card.Text>
-                                    {quantity}
+                              <Card.Text className="mb-3">
+                                    ${ quantity * price }
                               </Card.Text>
-                              <div className="actions">
-                                    <button onClick={() => addQuantity(id)}>
-                                          Sumar
+                              <div className="actions mb-3">
+                                    <button className="btn btn-dark" onClick={() => addQuantity(id)}>
+                                          +
                                     </button>
 
-                                    <button onClick={() => substractQuantity(id)}>
-                                          Restar
+                                    <span className="p-3">{ quantity }</span>
+
+                                    <button className="btn btn-dark" onClick={() => substractQuantity(id)}>
+                                          -
                                     </button>
                               </div>
                               <Button

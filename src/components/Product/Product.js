@@ -11,7 +11,7 @@ export const Product = ({ id, name, category, description, imageURL, price }) =>
       const { addItem } = useContext(CartContext);
 
       return (
-            <Card>
+            <Card className="product">
                   <Card.Img variant="top" className="product__img" src={imageURL} />
                   <Card.Body>
                         <Card.Title>{name}</Card.Title>
@@ -21,8 +21,8 @@ export const Product = ({ id, name, category, description, imageURL, price }) =>
                         <Card.Text>
                               {description}
                         </Card.Text>
-                        <div className="d-flex justify-content-between">
-                              <Card.Text className="product__price">
+                        <div className="d-flex justify-content-between align-items-center">
+                              <Card.Text className="product__price m-0">
                                     ${price}
                               </Card.Text>
                               <Button 
