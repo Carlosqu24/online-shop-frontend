@@ -26,6 +26,35 @@ export const CartProvider = (props) => {
             setCart([...cart, item]);
       };
 
+      const addQuantity = id => {
+      
+            const mapped = cart.map(item => {
+
+                  if(item._id == id) {
+                        item.quantity += 1
+                  }
+
+                  return item
+            });
+
+            setCart(mapped)
+      }
+
+      const substractQuantity = id => {
+            const mapped = cart.map(item => {
+
+                  if(item._id == id) {
+                        item.quantity == 1 
+                              ? item.quantity = 1
+                              : item.quantity -= 1;
+                  }
+
+                  return item
+            });
+
+            setCart(mapped)
+      }
+
       const deleteItem = id => {
             const newData = cart.filter(item => item._id != id);
 
@@ -45,7 +74,9 @@ export const CartProvider = (props) => {
             addItem,
             deleteItem,
             deleteAllItems,
-            getTotalAmount
+            getTotalAmount,
+            addQuantity,
+            substractQuantity
       };
 
       return (

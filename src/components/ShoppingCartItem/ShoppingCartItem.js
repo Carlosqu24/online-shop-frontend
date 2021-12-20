@@ -9,7 +9,7 @@ import { Button } from 'react-bootstrap'
 
 export const ShoppingCartItem = ({ id, name, description, imageURL, price, quantity }) => {
 
-      const { cart, deleteItem } = useContext(CartContext)
+      const { cart, deleteItem, addQuantity, substractQuantity } = useContext(CartContext)
 
       return (
             <>
@@ -23,6 +23,15 @@ export const ShoppingCartItem = ({ id, name, description, imageURL, price, quant
                               <Card.Text>
                                     {quantity}
                               </Card.Text>
+                              <div className="actions">
+                                    <button onClick={() => addQuantity(id)}>
+                                          Sumar
+                                    </button>
+
+                                    <button onClick={() => substractQuantity(id)}>
+                                          Restar
+                                    </button>
+                              </div>
                               <Button
                                     variant="danger"
                                     onClick={() => deleteItem(id)}
