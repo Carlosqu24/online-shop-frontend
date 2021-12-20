@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartProvider';
 
 export const PayPal = () => {
 
-      const { cart, getTotalAmount } = useContext(CartContext);
+      const { cart, deleteAllItems, getTotalAmount } = useContext(CartContext);
 
       const paypal = useRef();
 
@@ -37,6 +37,8 @@ export const PayPal = () => {
             }
 
             window.paypal.Buttons(object).render(paypal.current)
+
+            deleteAllItems();
       }, [])
 
       return (

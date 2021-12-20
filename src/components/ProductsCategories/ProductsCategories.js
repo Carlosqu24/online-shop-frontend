@@ -26,7 +26,7 @@ export const ProductsCategories = () => {
             <div className="products-categories-container">
                   {
                         productsCategories.map(item => (
-                              <div className="products-category">
+                              <div key={item.id} className="products-category">
                                     <img 
                                           src={item.url} 
                                           alt={item.name}

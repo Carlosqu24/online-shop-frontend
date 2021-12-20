@@ -9,8 +9,8 @@ export const Carousel = ({ images }) => {
             <>
                   <CarouselComponent interval={1000}>
                         {
-                              images.map(({ description, name, url }) => (
-                                    <CarouselComponent.Item className="bg-dark">
+                              images.map(({ id, description, name, url }) => (
+                                    <CarouselComponent.Item key={id} className="bg-dark">
                                           <img
                                                 className="carousel__img"
                                                 src={url}

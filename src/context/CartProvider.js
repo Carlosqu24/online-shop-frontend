@@ -32,6 +32,8 @@ export const CartProvider = (props) => {
             setCart(newData);
       };
 
+      const deleteAllItems = () => setCart([]);
+
       const getTotalAmount = () => {
             const itemPrices = cart.map(item => item.price)
 
@@ -42,6 +44,7 @@ export const CartProvider = (props) => {
             cart,
             addItem,
             deleteItem,
+            deleteAllItems,
             getTotalAmount
       };
 
