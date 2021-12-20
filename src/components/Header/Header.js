@@ -22,12 +22,10 @@ export const Header = () => {
                         </li>
                   </ul>
 
-                  {/* <Link to="/cart" className="header__cart btn">
+                  <Link to="/cart" className="header__cart btn">
                         <box-icon name="cart"></box-icon>
-                        <span>{cart.length}</span>
-                  </Link> */}
-
-                  <CartButton />
+                        <span>{ cart.length }</span>
+                  </Link>
             </header>
       )
 }

@@ -1,9 +1,7 @@
 .product {
       padding: 12px;
 
-      background: rgb(255, 255, 255);
-
-      text-align: center;
+      /* text-align: center; */
 }
 
 .product__img {

@@ -64,7 +64,7 @@ export const CartProvider = (props) => {
       const deleteAllItems = () => setCart([]);
 
       const getTotalAmount = () => {
-            const itemPrices = cart.map(item => item.price)
+            const itemPrices = cart.map(item => item.price * item.quantity)
 
             return itemPrices.reduce((prev, current) => prev + current, 0)
       }
