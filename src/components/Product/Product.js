@@ -22,7 +22,7 @@ export const Product = ({ id, name, category, description, imageURL, price }) =>
                               {description}
                         </Card.Text>
                         <div className="d-flex justify-content-between align-items-center">
-                              <Card.Text className="product__price m-0">
+                              <Card.Text className="product__price m-0 text-danger">
                                     ${price}
                               </Card.Text>
                               <Button 

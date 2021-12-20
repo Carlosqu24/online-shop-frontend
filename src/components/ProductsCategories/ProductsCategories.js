@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './ProductsCategories.css'
 
@@ -8,7 +8,7 @@ export const ProductsCategories = () => {
             {
                   id: 1,
                   url: "https://www.kantoaudio.com/wp-content/uploads/yu2mb_main.png",
-                  name: "Graphics"
+                  name: "Speakers"
             }, 
             {
                   id: 2,

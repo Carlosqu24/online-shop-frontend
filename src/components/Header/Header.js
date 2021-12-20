@@ -5,7 +5,6 @@ import { CartContext } from "../../context/CartProvider"
 import { Link } from 'react-router-dom'
 
 import './Header.css'
-import { CartButton } from '../CartButton/CartButton'
 
 export const Header = () => {
 
