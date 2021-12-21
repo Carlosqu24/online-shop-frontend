@@ -17,9 +17,6 @@ export const HomePage = () => {
 
                   const slicedData = data.slice(0, 3)
 
-                  console.log("Data", data)
-                  console.log("Sliced data", slicedData)
-
                   setImages(slicedData)
             }
 

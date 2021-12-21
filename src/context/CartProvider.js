@@ -1,89 +1,46 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useReducer, createContext } from 'react'
 
-export const CartContext = createContext();
+import cartReducer from './CartReducer';
 
-export const CartProvider = (props) => {
-      const [products, setProducts] = useState([])
-      const [cart, setCart] = useState([]);
+const initialState = {
+      products: [],
+      cart: []
+}
 
-      useEffect(() => {
-            const getProducts = async () => {
-                  const res = await fetch("http://localhost:9000/products");
-                  const data = await res.json();
+export const CartContext = createContext(initialState);
 
-                  setProducts(data);
-            };
+export const CartProvider = ({ children }) => {
+      const [state, dispatch] = useReducer(cartReducer, initialState);
 
-            getProducts();
-      }, []);
+      const addItem = item => dispatch({ type: 'ADD_CART_ITEM', payload: { ...item, quantity: 1 } });
 
-      const addItem = id => {
-            const data = products.filter(element => element._id === id);
+      const addItemQuantity = id => dispatch({ type: 'ADD_ITEM_QUANTITY', payload: id });
 
-            const item = data[0];
-            item.quantity = 1;
+      const substractItemQuantity = id => dispatch({ type: 'SUBSTRACT_ITEM_QUANTITY', payload: id })
 
-            setCart([...cart, item]);
-      };
+      const deleteItem = id => dispatch({ type: 'DELETE_CART_ITEM', payload: id });
 
-      const addQuantity = id => {
-      
-            const mapped = cart.map(item => {
-
-                  if(item._id == id) {
-                        item.quantity += 1
-                  }
-
-                  return item
-            });
-
-            setCart(mapped)
-      }
-
-      const substractQuantity = id => {
-            const mapped = cart.map(item => {
-
-                  if(item._id == id) {
-                        item.quantity == 1 
-                              ? item.quantity = 1
-                              : item.quantity -= 1;
-                  }
-
-                  return item
-            });
-
-            setCart(mapped)
-      }
-
-      const deleteItem = id => {
-            const newData = cart.filter(item => item._id != id);
-
-            setCart(newData);
-      };
-
-      const deleteAllItems = () => setCart([]);
+      const deleteAllItems = () => dispatch({ type: 'DELETE_ALL_CART_ITEMS', payload: {} });
 
       const getTotalAmount = () => {
-            const itemPrices = cart.map(item => item.price * item.quantity)
+            const itemPrices = state.cart.map(item => item.price * item.quantity)
 
-            return itemPrices.reduce((prev, current) => prev + current, 0)
+            return itemPrices.reduce((prev, current) => prev + current, 0);
       }
 
       const value = {
-            cart,
+            cart: state.cart,
             addItem,
+            addItemQuantity,
+            substractItemQuantity,
             deleteItem,
             deleteAllItems,
-            getTotalAmount,
-            addQuantity,
-            substractQuantity
+            getTotalAmount
       };
 
       return (
             <CartContext.Provider value={value}>
-                  {
-                        props.children
-                  }
+                  { children }
             </CartContext.Provider>
       )
 }
