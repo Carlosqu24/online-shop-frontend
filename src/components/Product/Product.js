@@ -7,27 +7,27 @@ import { CartContext } from '../../context/CartProvider'
 import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 
-export const Product = ({ id, name, category, description, imageURL, price }) => {
+export const Product = ({ product }) => {
       const { addItem } = useContext(CartContext);
 
       return (
-            <Card className="product">
-                  <Card.Img variant="top" className="product__img" src={imageURL} />
+            <Card className="product bg-dark">
+                  <Card.Img variant="top" className="product__img" src={product.imageURL} />
                   <Card.Body>
-                        <Card.Title>{name}</Card.Title>
+                        <Card.Title>{product.name}</Card.Title>
                         <Card.Subtitle>
-                              {category}
+                              {product.category}
                         </Card.Subtitle>
                         <Card.Text>
-                              {description}
+                              {product.description}
                         </Card.Text>
                         <div className="d-flex justify-content-between align-items-center">
-                              <Card.Text className="product__price m-0 text-danger">
-                                    ${price}
+                              <Card.Text className="product__price m-0 text-light">
+                                    ${product.price}
                               </Card.Text>
                               <Button 
-                                    variant="dark"
-                                    onClick={() => addItem(id)}
+                                    variant="primary"
+                                    onClick={() => addItem(product)}
                               >Add to cart</Button>
                         </div>
                   </Card.Body>

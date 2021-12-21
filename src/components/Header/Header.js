@@ -22,8 +22,8 @@ export const Header = () => {
                   </ul>
 
                   <Link to="/cart" className="header__cart btn">
-                        <box-icon name="cart"></box-icon>
-                        <span>{ cart.length }</span>
+                        <box-icon name="cart" color="#fff"></box-icon>
+                        <span className="text-white">{ cart.length }</span>
                   </Link>
             </header>
       )

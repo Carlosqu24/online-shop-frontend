@@ -10,8 +10,9 @@
   font-family: var(--primary-font);
 }
 
-body {
-  background: rgb(240, 240, 240);
+.App {
+  background: rgb(27, 27, 27);
+  color: #fff;
 }
 
 li {

@@ -13,7 +13,7 @@ export const CartSummary = () => {
       const { cart, getTotalAmount } = useContext(CartContext)      
 
       return (
-            <Card>
+            <Card className="bg-dark">
                   <Card.Header>Cart Summary</Card.Header>
                   <Card.Body>
                         <Card.Title>
