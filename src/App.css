@@ -15,6 +15,10 @@
   color: #fff;
 }
 
+.App .container {
+  min-height: 100vh;
+}
+
 li {
   list-style: none;
 }
