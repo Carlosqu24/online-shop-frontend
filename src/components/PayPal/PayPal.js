@@ -12,13 +12,13 @@ export const PayPal = () => {
 
             const object = {
                   createOrder: (data, actions, error) => {
-                  
+                        
                         return actions.order.create({
                               intent: "CAPTURE",
                               purchase_units: 
                                     [
                                           {
-                                                description: "Random description",
+                                                description: cart.map(item => `${item.name} $${item.price}`).join('-'),
                                                 amount: {
                                                       currency_code: "USD",
                                                       value: getTotalAmount() + 0.00
@@ -37,8 +37,6 @@ export const PayPal = () => {
             }
 
             window.paypal.Buttons(object).render(paypal.current)
-
-            deleteAllItems();
       }, [])
 
       return (
