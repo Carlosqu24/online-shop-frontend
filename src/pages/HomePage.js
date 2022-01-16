@@ -1,31 +1,14 @@
-import React, { useState, useEffect } from 'react';
-
+import React from 'react';
+import { useProducts } from '../hooks/useProducts';
 import { Carousel } from '../components/Carousel/Carousel';
 import { ProductsCategories } from '../components/ProductsCategories/ProductsCategories';
 
-const initialState = []
-
 export const HomePage = () => {
-
-      const [images, setImages] = useState(initialState)
-
-      useEffect(() => {
-            
-            const getImages = async () => {
-                  const response = await fetch('http://localhost:9000/products/Laptop')
-                  const data = await response.json();
-
-                  const slicedData = data.slice(0, 3)
-
-                  setImages(slicedData)
-            }
-
-            getImages()
-      }, [])
+      const { products } = useProducts();
 
       return (
             <>
-                  <Carousel images={images} />    
+                  <Carousel images={products} />    
                   <ProductsCategories />   
             </>
       )

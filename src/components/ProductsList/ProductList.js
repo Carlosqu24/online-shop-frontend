@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from 'react'
-
+import React from 'react'
+import { useProducts } from '../../hooks/useProducts'
+import { Product } from '../Product/Product'
 import './ProductsList.css'
 
-import { Product } from '../Product/Product'
-
 export const ProductList = () => {
-      const [products, setProducts] = useState([])
-
-      useEffect(() => {
-
-            const getProducts = async () => {
-                  const res = await fetch("http://localhost:9000/products");
-                  const data = await res.json();
-
-                  setProducts(data);
-            };
-
-            getProducts();
-      }, []);
+      const { products } = useProducts();      
 
       return (
             <>    
